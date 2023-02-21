@@ -4,7 +4,7 @@ require("core-js/modules/es.weak-map.js");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports.SideNav = void 0;
 require("core-js/modules/web.dom-collections.iterator.js");
 var _react = _interopRequireWildcard(require("react"));
 var _material = require("@mui/material");
@@ -17,22 +17,17 @@ var _Search = _interopRequireDefault(require("@mui/icons-material/Search"));
 var _Apps = _interopRequireDefault(require("@mui/icons-material/Apps"));
 var _Settings = _interopRequireDefault(require("@mui/icons-material/Settings"));
 var _NotificationsNoneOutlined = _interopRequireDefault(require("@mui/icons-material/NotificationsNoneOutlined"));
-var _avocado = _interopRequireDefault(require("./images/avocado.svg"));
-var _nour = _interopRequireDefault(require("./images/nour.jpg"));
-var _english = _interopRequireDefault(require("./images/english.webp"));
-var styles = _interopRequireWildcard(require("./helpers/chatViewLayoutStyles"));
+var _chatViewLayoutStyles = require("./helpers/chatViewLayoutStyles");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 // icons from @mui
 
-// images from assets
-
 // from helpers
 
 const SideNav = () => {
-  const [currentTap, setCurrentTab] = _react.useState < string | null > null;
-  const [isActive, setActive] = _react.useState < any > {};
+  const [currentTap, setCurrentTab] = (0, _react.useState)(null);
+  const [isActive, setActive] = (0, _react.useState)({});
   const handleChange = (event, newTab) => {
     setCurrentTab(newTab);
     setActive({
@@ -70,7 +65,7 @@ const SideNav = () => {
     p: .6
   }, /*#__PURE__*/_react.default.createElement("img", {
     alt: "avocado icon",
-    src: _avocado.default
+    src: "https://twerlo-clients.s3.me-south-1.amazonaws.com/onezy/avocado.svg"
   })), /*#__PURE__*/_react.default.createElement(_material.Stack, {
     direction: "column",
     alignItems: "center",
@@ -80,55 +75,55 @@ const SideNav = () => {
     onChange: handleChange,
     value: currentTap,
     exclusive: true
-  }, /*#__PURE__*/_react.default.createElement(styles.ToggleButton, {
+  }, /*#__PURE__*/_react.default.createElement(_chatViewLayoutStyles.ToggleButton, {
     "aria-label": "Dashboard",
-    style: styles.toggleButtonGroupStyle,
+    style: _chatViewLayoutStyles.toggleButtonGroupStyle,
     value: "Dashboard"
   }, /*#__PURE__*/_react.default.createElement(_Dashboard.default, {
-    style: isActive.Dashboard ? styles.iconActiveToggleButtonStyle : styles.iconInactiveToggleButtonStyle
-  })), /*#__PURE__*/_react.default.createElement(styles.ToggleButton, {
+    style: isActive.Dashboard ? _chatViewLayoutStyles.iconActiveToggleButtonStyle : _chatViewLayoutStyles.iconInactiveToggleButtonStyle
+  })), /*#__PURE__*/_react.default.createElement(_chatViewLayoutStyles.ToggleButton, {
     "aria-label": "Library",
-    style: styles.toggleButtonGroupStyle,
+    style: _chatViewLayoutStyles.toggleButtonGroupStyle,
     value: "Library"
   }, /*#__PURE__*/_react.default.createElement(_LibraryAdd.default, {
-    style: isActive.Library ? styles.iconActiveToggleButtonStyle : styles.iconInactiveToggleButtonStyle
-  })), /*#__PURE__*/_react.default.createElement(styles.ToggleButton, {
+    style: isActive.Library ? _chatViewLayoutStyles.iconActiveToggleButtonStyle : _chatViewLayoutStyles.iconInactiveToggleButtonStyle
+  })), /*#__PURE__*/_react.default.createElement(_chatViewLayoutStyles.ToggleButton, {
     "aria-label": "Chat",
-    style: styles.toggleButtonGroupStyle,
+    style: _chatViewLayoutStyles.toggleButtonGroupStyle,
     value: "Chat"
   }, /*#__PURE__*/_react.default.createElement(_Chat.default, {
-    style: isActive.Chat ? styles.iconActiveToggleButtonStyle : styles.iconInactiveToggleButtonStyle
-  })), /*#__PURE__*/_react.default.createElement(styles.ToggleButton, {
+    style: isActive.Chat ? _chatViewLayoutStyles.iconActiveToggleButtonStyle : _chatViewLayoutStyles.iconInactiveToggleButtonStyle
+  })), /*#__PURE__*/_react.default.createElement(_chatViewLayoutStyles.ToggleButton, {
     "aria-label": "Account",
-    style: styles.toggleButtonGroupStyle,
+    style: _chatViewLayoutStyles.toggleButtonGroupStyle,
     value: "Account"
   }, /*#__PURE__*/_react.default.createElement(_AccountBox.default, {
-    style: isActive.Account ? styles.iconActiveToggleButtonStyle : styles.iconInactiveToggleButtonStyle
-  })), /*#__PURE__*/_react.default.createElement(styles.ToggleButton, {
+    style: isActive.Account ? _chatViewLayoutStyles.iconActiveToggleButtonStyle : _chatViewLayoutStyles.iconInactiveToggleButtonStyle
+  })), /*#__PURE__*/_react.default.createElement(_chatViewLayoutStyles.ToggleButton, {
     "aria-label": "Search",
-    style: styles.toggleButtonGroupStyle,
+    style: _chatViewLayoutStyles.toggleButtonGroupStyle,
     value: "Search"
   }, /*#__PURE__*/_react.default.createElement(_Search.default, {
-    style: isActive.Search ? styles.iconActiveToggleButtonStyle : styles.iconInactiveToggleButtonStyle
-  })), /*#__PURE__*/_react.default.createElement(styles.ToggleButton, {
+    style: isActive.Search ? _chatViewLayoutStyles.iconActiveToggleButtonStyle : _chatViewLayoutStyles.iconInactiveToggleButtonStyle
+  })), /*#__PURE__*/_react.default.createElement(_chatViewLayoutStyles.ToggleButton, {
     "aria-label": "Apps",
-    style: styles.toggleButtonGroupStyle,
+    style: _chatViewLayoutStyles.toggleButtonGroupStyle,
     value: "Apps"
   }, /*#__PURE__*/_react.default.createElement(_Apps.default, {
-    style: isActive.Apps ? styles.iconActiveToggleButtonStyle : styles.iconInactiveToggleButtonStyle
-  })), /*#__PURE__*/_react.default.createElement(styles.ToggleButton, {
+    style: isActive.Apps ? _chatViewLayoutStyles.iconActiveToggleButtonStyle : _chatViewLayoutStyles.iconInactiveToggleButtonStyle
+  })), /*#__PURE__*/_react.default.createElement(_chatViewLayoutStyles.ToggleButton, {
     "aria-label": "Settings",
-    style: styles.toggleButtonGroupStyle,
+    style: _chatViewLayoutStyles.toggleButtonGroupStyle,
     value: "Settings"
   }, /*#__PURE__*/_react.default.createElement(_Settings.default, {
-    style: isActive.Settings ? styles.iconActiveToggleButtonStyle : styles.iconInactiveToggleButtonStyle
+    style: isActive.Settings ? _chatViewLayoutStyles.iconActiveToggleButtonStyle : _chatViewLayoutStyles.iconInactiveToggleButtonStyle
   }))))), /*#__PURE__*/_react.default.createElement(_material.Stack, {
     display: "flex",
     flexDirection: "column-reverse",
     alignItems: "center"
   }, /*#__PURE__*/_react.default.createElement(_Avatar.default, {
     alt: "Profile Image",
-    src: _nour.default,
+    src: "https://twerlo-clients.s3.me-south-1.amazonaws.com/onezy/nour.jpg",
     sx: {
       mb: '20px'
     }
@@ -142,11 +137,10 @@ const SideNav = () => {
     }
   }), /*#__PURE__*/_react.default.createElement(_Avatar.default, {
     alt: "Language",
-    src: _english.default,
+    src: "https://twerlo-clients.s3.me-south-1.amazonaws.com/onezy/english.webp",
     sx: {
       mb: '20px'
     }
   }))));
 };
-var _default = SideNav;
-exports.default = _default;
+exports.SideNav = SideNav;
